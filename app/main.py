@@ -2,6 +2,7 @@ from utils.read_yaml_file import yaml_to_dict
 from utils.manage_database_models import action_db_tables
 from utils.manage_workers_and_queue import manage_workers_and_queue
 from utils.get_sql import get_questions_handler
+from utils.debuggers import debug_time
 import logging
 from fastapi import FastAPI
 
