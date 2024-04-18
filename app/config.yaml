@@ -1,0 +1,2 @@
+DATABASE_URL: "mysql+pymysql://admin:Data2024*@dbchallenge.cds8wukwabp3.us-east-2.rds.amazonaws.com:3306/migration?connect_timeout=30"
+
