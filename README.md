@@ -8,13 +8,16 @@ This repository contains the Data Challenge application, which processes and man
 - The Database used is a MySQL database hosted in AWS RDS under the free tier.
 - YOu can connect to the API in the following link from an EC2 instance: http://3.131.36.170:8000/docs
 
-You can test the endpoinds from the swager docs.
+You can test the endpoints from the Swagger documentation.
+
+Note: The database instance and the EC2 instances are configured to allow all traffic from the internet (both inbound and outbound rules). This setup was chosen for convenience due to time constraints. For enhanced security in the future, we can integrate authentication into the API, such as using Okta. Additionally, creating IAM roles and running everything within a controlled VPC would be advisable.
+
+Due to time constraints, I was unable to perform tests, mock connections, or use pytest.
+
+#### High level workflow of the App
+![App Fowchart](de_practice.png)
 
 
-Note: The instance of th edatabase and the EC2 isntances are allowing all the traffic from internet (outbound and inbound rules). It was easier for this challenge because of time. 
-For a more secure way, in the future, We can add auth to the API like Okta. Also creating IAM roles, running everything within a controlled VPC would be better. 
-
-Because of time I could not test , mocking conns or using pytest.
 ### Database Structure
 ![Entity Relationship Diagram](DER.png)
 
