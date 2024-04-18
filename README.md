@@ -14,18 +14,27 @@ You can test the endpoinds from the swager docs.
 Note: The instance of th edatabase and the EC2 isntances are allowing all the traffic from internet (outbound and inbound rules). It was easier for this challenge because of time. 
 For a more secure way, in the future, We can add auth to the API like Okta. Also creating IAM roles, running everything within a controlled VPC would be better. 
 
-
+Because of time I could not test , mocking conns or using pytest.
 ### Database Structure
 ![Entity Relationship Diagram](DER.png)
 
 ### Docker Image
 
-To build th eDocker image use:
+To build the Docker image use:
 
 ```docker build -t fastapiapp .```
 
 To expose the App: ```docker run -p 8000:8000 fastapiapp ```
 
+The source code was taken from github. The git client wasinstalled in the Ec2 instance.
+
+Installing docker within the Amazon Linux Free tier instance:
+- `sudo dnf update -y`
+- `sudo dnf install docker -y`
+- `sudo systemctl start docker`
+- `sudo docker version`
+- `sudo usermod -aG docker ${USER}`
+- `newgrp docker`
 
 ### Explanation of the Structure
 
