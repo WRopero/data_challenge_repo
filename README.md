@@ -6,10 +6,26 @@ This repository contains the Data Challenge application, which processes and man
 
 - The API was created using FAST API package (https://fastapi.tiangolo.com/). 
 - The Database used is a MySQL database hosted in AWS RDS under the free tier.
-- YOu can connect to the API in ht efollowing link: 
+- YOu can connect to the API in the following link from an EC2 instance: http://3.131.36.170:8000/docs
+
+You can test the endpoinds from the swager docs.
+
+
+Note: The instance of th edatabase and the EC2 isntances are allowing all the traffic from internet (outbound and inbound rules). It was easier for this challenge because of time. 
+For a more secure way, in the future, We can add auth to the API like Okta. Also creating IAM roles, running everything within a controlled VPC would be better. 
+
 
 ### Database Structure
 ![Entity Relationship Diagram](DER.png)
+
+### Docker Image
+
+To build th eDocker image use:
+
+```docker build -t fastapiapp .```
+
+To expose the App: ```docker run -p 8000:8000 fastapiapp ```
+
 
 ### Explanation of the Structure
 
