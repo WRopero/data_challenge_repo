@@ -6,15 +6,15 @@ This repository contains the Data Challenge application, which processes and man
 
 - The API was created using FAST API package (https://fastapi.tiangolo.com/). 
 - The Database used is a MySQL database hosted in AWS RDS under the free tier.
-- YOu can connect to the API in the following link from an EC2 instance: http://3.131.36.170:8000/docs
+- You can connect to the API in the following link. It is hosted in an EC2 instance: http://3.131.36.170:8000/docs
 
 You can test the endpoints from the Swagger documentation.
 
-Note: The database instance and the EC2 instances are configured to allow all traffic from the internet (both inbound and outbound rules). This setup was chosen for convenience due to time constraints. For enhanced security in the future, we can integrate authentication into the API, such as using Okta. Additionally, creating IAM roles and running everything within a controlled VPC would be advisable.
+Note: The database and the EC2 instances are configured to allow all traffic from the internet (both inbound and outbound rules). This setup was chosen for convenience due to time constraints. For enhanced security in the future, we can integrate authentication into the API, such as using Okta. Creating IAM roles and running everything within a controlled VPC would be advisable.
 
 Due to time constraints, I was unable to perform tests, mock connections, or use pytest.
 
-You can find th SQL logic that answer the SQL questions of the challenges here: https://github.com/WRopero/data_challenge_repo/blob/main/app/config/sql/
+You can find the SQL logic that answers the SQL questions of the challenges here: https://github.com/WRopero/data_challenge_repo/blob/main/app/config/sql/
 
 #### High level workflow of the App
 ![App Fowchart](de_practice.png)
@@ -31,7 +31,7 @@ To build the Docker image use:
 
 To expose the App: ```docker run -p 8000:8000 fastapiapp ```
 
-The source code was taken from github. The git client wasinstalled in the Ec2 instance.
+The source code was taken from github. The git client was installed in the Ec2 instance.
 
 Installing docker within the Amazon Linux Free tier instance:
 - `sudo dnf update -y`
@@ -50,7 +50,7 @@ Installing docker within the Amazon Linux Free tier instance:
   - **`utils/`**: Consists of utility scripts that assist in tasks like reading configuration files (`read_yaml_file.py`), managing SQL queries (`get_sql.py`), and more sophisticated database model management (`manage_database_models.py`).
 - **`source/` directory**: Stores CSV files (`departments.csv`, `hired_employees.csv`, `jobs.csv`) that provide initial data or are used for data import/export tasks.
 - **`requirements.txt`**: Lists all Python packages needed to run the application, ensuring all dependencies are easily installable via `pip`.
-- **`DER.png`**: A diagram that visually represents the database's entity-relationship model, helpful for understanding the database schema at a glance.
+- **`DER.png`**: A diagram visually representing the database's entity-relationship model, helpful for understanding the database schema at a glance.
 
 This structure supports modularity in development and maintenance, easing scaling, and enhancing different functionalities independently.
 
