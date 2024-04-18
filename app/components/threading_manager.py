@@ -10,7 +10,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 
 class GenerateWorker(Thread):
     """
-    Worker class to generate the final SQL files and run the anonymization process
+   To generate the workers that will insert the data to the database.
     """
     def __init__(self, q: Queue, thread_id, env, db_url, max_attempt, model):
         self.queue = q
