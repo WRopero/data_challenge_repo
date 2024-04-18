@@ -20,4 +20,3 @@ class DatabaseManager:
     
     def load_data(self, model, dataframe):
         dataframe.to_sql(model.__tablename__, self.db_engine, if_exists='append', index=False)
-    
