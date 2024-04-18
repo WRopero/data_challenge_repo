@@ -14,6 +14,8 @@ Note: The database instance and the EC2 instances are configured to allow all tr
 
 Due to time constraints, I was unable to perform tests, mock connections, or use pytest.
 
+You can find th SQL logic that answer the SQL questions of the challenges here: https://github.com/WRopero/data_challenge_repo/blob/main/app/config/sql/
+
 #### High level workflow of the App
 ![App Fowchart](de_practice.png)
 

@@ -25,23 +25,23 @@ class GenerateWorker(Thread):
         
         while True:
             target, attempt = self.queue.get(timeout=3)
-            # try:
-            if target is None:
+            try:
+                if target is None:
+                    self.queue.task_done()
+                    break
+
+                logging.info(f"Thread {self.thread_id} is loading data for attempt {attempt}")
+                self.db_manager.load_data(model=self.model, dataframe=target)
                 self.queue.task_done()
-                break
-
-            logging.info(f"Thread {self.thread_id} is loading data for attempt {attempt}")
-            self.db_manager.load_data(model=self.model, dataframe=target)
-            self.queue.task_done()
-            logging.info(f"new queue size: {self.queue.qsize()}")
+                logging.info(f"new queue size: {self.queue.qsize()}")
 
 
-            # except Exception as e:
-            #     if attempt < self.max_attempt:
-            #         logging.warning(f"Issue loading data: {e}")
-            #         self.queue.put((target, attempt + 1))
-            #         self.queue.task_done()
-            #     else:
-            #         logging.critical(f"Final attempt failed at uploading data: {e}")
+            except Exception as e:
+                if attempt < self.max_attempt:
+                    logging.warning(f"Issue loading data: {e}")
+                    self.queue.put((target, attempt + 1))
+                    self.queue.task_done()
+                else:
+                    logging.critical(f"Final attempt failed at uploading data: {e}")
 
                 
