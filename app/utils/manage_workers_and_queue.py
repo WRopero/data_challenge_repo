@@ -23,7 +23,7 @@ def manage_workers_and_queue(filename, chunk_size, thread_count, db_url, env='de
 
     worker_list = []
 
-    file_path = os.path.join(os.path.dirname(__file__), "..","..", "source", f"{filename}.csv")
+    file_path = os.path.join(os.path.dirname(__file__),"..", "source", f"{filename}.csv")
     model = MODELS.get(filename)
     col_names = [column.name for column in model.__table__.columns]
     queue_manager_objetcs = QueueManager(file_path, chunk_size).add_to_queue(col_names=col_names)

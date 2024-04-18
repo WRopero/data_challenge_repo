@@ -25,12 +25,21 @@ def read_root():
 def create_tables():
     """
     Create the tables declared as models in the MySQL database
-    """
-    
-    table_names = action_db_tables(config['DATABASE_URL'])
 
-    return {"logger": f"Tables created in database: {config['DATABASE_URL'].split('/')[-1]}",
-            "tables_created": table_names}
+    The order to create the tables because of dependencies is:
+    1. jobs
+    2. departments
+    3. hired_employees
+
+    If you do nto doit in th eorder, the tables will not be created
+    """
+    try: 
+        table_names = action_db_tables(config['DATABASE_URL'])
+
+        return {"logger": f"Tables created in database: {config['DATABASE_URL'].split('/')[-1]}",
+                "tables_created": table_names}
+    except Exception as e:
+        return {"error": f"Error creating tables: {e}"}
 
 
 @app.post("/drop_tables")
@@ -53,6 +62,7 @@ def load_data(filename: str, thread_count: int, chunk_size: int, env: str):
     :param thread_count: Number of threads
     :param chunk_size: Size of the chunk
     :param env: Environment
+
     """
 
     try:
