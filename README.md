@@ -61,13 +61,7 @@ This structure supports modularity in development and maintenance, easing scalin
     ├── LICENSE
     ├── README.md
     ├── app
-    │   ├── 
-    │   │   └── main.cpython-311.pyc
     │   ├── components
-    │   │   ├── |
-    │   │   │   ├── database_manager.cpython-311.pyc
-    │   │   │   ├── queue_manager.cpython-311.pyc
-    │   │   │   └── threading_manager.cpython-311.pyc
     │   │   ├── database_manager.py
     │   │   ├── queue_manager.py
     │   │   └── threading_manager.py
@@ -79,16 +73,9 @@ This structure supports modularity in development and maintenance, easing scalin
     │   ├── main.py
     │   ├── models
     │   │   ├── __init__.py
-    │   │   │   ├── __init__.cpython-311.pyc
-    │   │   │   └── database_models.cpython-311.pyc
     │   │   └── database_models.py
     │   └── utils
     │       ├── __init__.py
-    │       │   ├── __init__.cpython-311.pyc
-    │       │   ├── get_sql.cpython-311.pyc
-    │       │   ├── manage_database_models.cpython-311.pyc
-    │       │   ├── manage_workers_and_queue.cpython-311.pyc
-    │       │   └── read_yaml_file.cpython-311.pyc
     │       ├── get_sql.py
     │       ├── manage_database_models.py
     │       ├── manage_workers_and_queue.py
