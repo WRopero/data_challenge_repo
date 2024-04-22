@@ -1,12 +1,12 @@
 # Data Challenge Project
 
-This repository contains the Data Challenge application, which processes and manages data for employee, job, and department entities. It features database interactions, queue management, and threading.
+This repository contains a Data Challenge application, which processes and manages data for employee, job, and department entities. It features database interactions, queue management, and threading.
 
 ### The API
 
 - The API was created using FAST API package (https://fastapi.tiangolo.com/). 
 - The Database used is a MySQL database hosted in AWS RDS under the free tier.
-- You can connect to the API in the following link. It is hosted in an EC2 instance: http://3.131.36.170:8000/docs
+- You can connect to the API in the following link. It is hosted in an EC2 instance: http://3.131.36.170:8000/docs (Deactivated for now)
 
 You can test the endpoints from the Swagger documentation.
 
@@ -14,7 +14,7 @@ Note: The database and the EC2 instances are configured to allow all traffic fro
 
 Due to time constraints, I was unable to perform tests, mock connections, or use pytest.
 
-You can find the SQL logic that answers the SQL questions of the challenges here: https://github.com/WRopero/data_challenge_repo/blob/main/app/config/sql/
+You can find the SQL logic that answers the SQL questions of the challenges here: https://github.com/WRopero/data_challenge_repo/blob/main/app/config/sql/ . The questions are within the functions comments.
 
 #### High level workflow of the App
 ![App Fowchart](de_practice.png)
@@ -31,7 +31,7 @@ To build the Docker image use:
 
 To expose the App: ```docker run -p 8000:8000 fastapiapp ```
 
-The source code was taken from github. The git client was installed in the Ec2 instance.
+The source code was taken from github (doing a git clone of this code). The git client was installed in the Ec2 instance.
 
 Installing docker within the Amazon Linux Free tier instance:
 - `sudo dnf update -y`
