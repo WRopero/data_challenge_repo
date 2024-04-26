@@ -12,8 +12,6 @@ You can test the endpoints from the Swagger documentation.
 
 Note: The database and the EC2 instances are configured to allow all traffic from the internet (both inbound and outbound rules). This setup was chosen for convenience due to time constraints. For enhanced security in the future, we can integrate authentication into the API, such as using Okta. Creating IAM roles and running everything within a controlled VPC would be advisable.
 
-Due to time constraints, I was unable to perform tests, mock connections, or use pytest.
-
 You can find the SQL logic that answers the SQL questions of the challenges here: https://github.com/WRopero/data_challenge_repo/blob/main/app/config/sql/ . The questions are within the functions comments.
 
 #### High level workflow of the App
